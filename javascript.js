@@ -1,0 +1,154 @@
+// let a = 4;
+// let b = 65;
+// let c = 10;
+// if(a>b && a>c){
+//     console.log(a);
+// }
+// else if(b>a && b>c){
+//     console.log(b);
+// }
+// else{
+//     console.log(c);
+// }
+
+// let day = 4;
+// switch (day){
+//     case 1 : console.log("Monday");
+//     break;
+//     case 2 : console.log("Tuesday");
+//     break;
+//     case 3 : console.log("Wednesday");
+//     break;
+//     case 4 : console.log("Thursday");
+//     break;
+//     case 5 : console.log("Friday");
+//     break;
+//     case 6 : console.log("Saturday");
+//     break;
+//     case 7 : console.log("Sunday");
+//     break;
+// }
+
+    // equal comparison
+// console.log('5'==5);
+    //strict equality
+// console.log('5' === 5);
+
+    //ternary operator
+//(condition)? val1(gives true) : val2(gives false)
+// let age = 25;
+// age=17;
+// let status1 = (age>18) ? 'I can vote' : 'I cannot vote';
+// console.log(status1);
+
+
+// let name = "payel"
+// let age = 19
+
+// console.log(`hello i am ${name} of ${age} years old`);
+
+// console.log(Math)
+// console.log(Math.abs(-5));
+// console.log(Math.random()); // gives number between 0-9
+// console.log(Math.random()*10 +1); // to avoid 0 in the first place multiply by 10 by adding 1 give number between 1-9
+
+// const min = 10;
+// const max = 20;
+// console.log(Math.floor(Math.random() * (max - min + 1)) + min);  //number to expect between max and min
+
+// let myDate = new Date()
+// console.log(myDate.toString());
+// console.log(myDate.toJSON())
+// console.log(myDate.toDateString())
+// console.log(myDate.toLocaleString())
+
+// let myCreatedDate = new Date(2026, 7, 1)
+// let myCreatedDate = new Date(2026, 7, 1, 7, 0) //year, month(starts from 0), date, hour, min, sec
+// console.log(myCreatedDate.toDateString());
+// console.log(myCreatedDate.toLocaleString());
+
+// let myTime = Date.now();
+// console.log(myTime) //always in milliseconds
+// console.log(myCreatedDate.getTime()) // compare time created on that date
+// console.log(Math.floor(Date.now()/1000))  // to get in seconds
+
+
+// OBJECTS
+
+//1. object literal
+const mySymbol = "key"
+const Puser = {
+    name : "Payel",
+    age: 18,
+    [mySymbol] : "mykey", // correct way to write symbol
+    "full name": "Payel Bera",
+    location: "Delhi",
+    dob: "01-08-2006",
+    isLoggedIn: false
+}
+
+// console.log(Puser.age)
+// console.log(Puser["age"]) //most preffered to use
+// console.log(Puser["full name"]);
+// console.log(typeof Puser[mySymbol]);
+
+// const {name : n} = Puser     //new method to call function
+// console.log(name)
+// console.log(n)
+
+// Object.freeze(Puser)
+// Puser.age = 19
+// console.log(Puser)
+
+// Puser.greeting = function(){
+//     console.log("hello user");
+// }
+// Puser.greetingTwo = function(){
+//     console.log(`hello user ${this.name}`);     //usage of writing 
+// }
+// console.log(Puser.greeting());
+// console.log(Puser.greetingTwo());
+
+// 2. Object Singleton
+// const tinderUser = new Object();     //singleton
+// const tinderuser = {};       //non-singleton
+// console.log(tinderUser);
+// console.log(tinderuser);
+
+//-----------MERGING----- (Object.assign) 
+// const obj1 = {1:"a" , 2:"b"}
+// const obj2 = {3:"a" , 4:"b"}
+//const obj3 = { obj1 , obj2 }        //{ obj1: { '1': 'a', '2': 'b' }, obj2: { '3': 'a', '4': 'b' } }
+
+//const obj3 = Object.assign({}, obj1, obj2)    [result will store in an empty object]
+// const obj3 = Object.assign(obj1, obj2)   [result will be equal to obj1, as everything is getting stored there]
+
+// const obj3 = {...obj1, ...obj2}   //spread method = easy n modest 
+// console.log(obj3);
+// console.log(obj3 == obj1)
+
+
+// JSON
+// {
+//     "name" : "payel" ,
+//     "age" : "19" , 
+//     "email" : "payel@gmail.com"
+// }
+
+
+//funtions
+// function addTwoNumbers(n1 , n2){
+//     console.log(n1+n2);   
+// }
+// addTwoNumbers(3,5)
+// const result = addTwoNumbers(3,5)
+// console.log("result:", result);      //result : undefined
+
+
+function addTwoNumbers(n1 , n2){
+    let result = n1+n2
+    return result       //after result no lines will  get executed
+    //*directly return can be written, no need of let (return n1+n2)
+}
+// const result = addTwoNumbers(3,5)
+// console.log("result:", result);
