@@ -56,7 +56,7 @@
 // const max = 20;
 // console.log(Math.floor(Math.random() * (max - min + 1)) + min);  //number to expect between max and min
 
-// let myDate = new Date()
+let myDate = new Date()
 // console.log(myDate.toString());
 // console.log(myDate.toJSON())
 // console.log(myDate.toDateString())
@@ -116,14 +116,14 @@ const Puser = {
 // console.log(tinderuser);
 
 //-----------MERGING----- (Object.assign) 
-// const obj1 = {1:"a" , 2:"b"}
-// const obj2 = {3:"a" , 4:"b"}
+const obj1 = {1:"a" , 2:"b"}
+const obj2 = {3:"a" , 4:"b"}
 //const obj3 = { obj1 , obj2 }        //{ obj1: { '1': 'a', '2': 'b' }, obj2: { '3': 'a', '4': 'b' } }
 
 //const obj3 = Object.assign({}, obj1, obj2)    [result will store in an empty object]
 // const obj3 = Object.assign(obj1, obj2)   [result will be equal to obj1, as everything is getting stored there]
 
-// const obj3 = {...obj1, ...obj2}   //spread method = easy n modest 
+const obj3 = {...obj1, ...obj2}   //spread method = easy n modest 
 // console.log(obj3);
 // console.log(obj3 == obj1)
 
@@ -152,3 +152,38 @@ function addTwoNumbers(n1 , n2){
 }
 // const result = addTwoNumbers(3,5)
 // console.log("result:", result);
+
+
+function loginUserMessage(username){
+    return `${username} just logged in`
+}
+// console.log(loginUserMessage("payel"));
+// console.log(loginUserMessage());    //prints undefined
+
+function calculateCartPrice(...num1){  //three dots are used to convert the arguments given in the array
+    return num1
+}
+// console.log(calculateCartPrice(200,500,6000));
+
+
+const myArray = [200,500,8000]
+function returnSecondValue(getArray){
+    return getArray[1]
+}
+// console.log(returnSecondValue(myArray));
+// console.log(returnSecondValue([200,400,800]));      //normal way without making new const
+
+
+// console.log(addOne(5));      //here can be initialised before
+function addOne(num1){
+    return num1 + 1
+}
+// console.log(addOne(5));
+
+// console.log(addTwo(5));         //cannot be initialised before if function is stored under any variable
+const addTwo =  function(num1){
+    return num1 + 2
+}
+// console.log(addTwo(5));
+
+
