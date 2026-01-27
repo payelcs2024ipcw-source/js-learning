@@ -187,3 +187,44 @@ const addTwo =  function(num1){
 // console.log(addTwo(5));
 
 
+const user = {
+    username : "payel",
+    price : 4000,
+    welcomeMessage : function(){
+        console.log(`${this.username}, welcome `);      //this gives the current values n it only works under object
+        console.log(this);
+    }
+}
+
+// user.welcomeMessage()
+// user.username = "voila"
+// user.welcomeMessage()
+//console.log(this)     //at this point it will print empty braces
+
+function hello(){
+    console.log(this);
+    
+}
+// hello()
+
+//----------explicit arrow usage  () => {}
+// const addNum = (num1 , num2) => {
+//     return num1 + num2
+// }
+// console.log(addNum(4,6));
+
+//-------implicit method
+// const addNum = (num1 , num2) => num1 + num2
+// const addNum = (num1 , num2) => (num1 + num2)
+// const addNum = (num1 , num2) => ({username : "payel"})  //for object declaration using arrow
+// console.log(addNum(4,6));
+
+
+//---------IIFE (immediately invoked function expressions)
+( function bla(){
+    console.log(`heyaaa`);
+})();       //; is neccessary
+
+( () => {
+    console.log("hihihi"); 
+})()
