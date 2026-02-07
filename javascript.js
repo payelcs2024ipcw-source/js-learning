@@ -35,7 +35,7 @@
 // console.log('5' === 5);
 
     //ternary operator
-//(condition)? val1(gives true) : val2(gives false)
+//(condition)? sio(gives true) : val2(gives false)
 // let age = 25;
 // age=17;
 // let status1 = (age>18) ? 'I can vote' : 'I cannot vote';
@@ -75,7 +75,7 @@ let myDate = new Date()
 
 // OBJECTS
 
-//1. object literal
+//1. myObject literal
 const mySymbol = "key"
 const Puser = {
     name : "Payel",
@@ -120,7 +120,7 @@ const obj1 = {1:"a" , 2:"b"}
 const obj2 = {3:"a" , 4:"b"}
 //const obj3 = { obj1 , obj2 }        //{ obj1: { '1': 'a', '2': 'b' }, obj2: { '3': 'a', '4': 'b' } }
 
-//const obj3 = Object.assign({}, obj1, obj2)    [result will store in an empty object]
+//const obj3 = Object.assign({}, obj1, obj2)    [result will store in an empty myObject]
 // const obj3 = Object.assign(obj1, obj2)   [result will be equal to obj1, as everything is getting stored there]
 
 const obj3 = {...obj1, ...obj2}   //spread method = easy n modest 
@@ -191,7 +191,7 @@ const user = {
     username : "payel",
     price : 4000,
     welcomeMessage : function(){
-        console.log(`${this.username}, welcome `);      //this gives the current values n it only works under object
+        console.log(`${this.username}, welcome `);      //this gives the current values n it only works under myObject
         console.log(this);
     }
 }
@@ -216,15 +216,95 @@ function hello(){
 //-------implicit method
 // const addNum = (num1 , num2) => num1 + num2
 // const addNum = (num1 , num2) => (num1 + num2)
-// const addNum = (num1 , num2) => ({username : "payel"})  //for object declaration using arrow
+// const addNum = (num1 , num2) => ({username : "payel"})  //for myObject declaration using arrow
 // console.log(addNum(4,6));
 
 
 //---------IIFE (immediately invoked function expressions)
 ( function bla(){
-    console.log(`heyaaa`);
+    // console.log(`heyaaa`);
 })();       //; is neccessary
 
 ( () => {
-    console.log("hihihi"); 
+    // console.log("hihihi"); 
 })()
+
+//falsy values
+// false , 0 , -0 , BigInt 0n , null , undefined , NaN , ""
+//rest all r truthy values  "0" , 'false' , " " , [] , {} , function(){}
+
+//Nullish Coalescing Operator (??) : null , undefined
+
+let sio;
+// sio = 5 ?? 10   IOP[]
+sio = null ?? 10
+// console.log(sio);
+
+
+let n = 10;
+for (let i = 1; i<=10; i++){
+    // console.log(n + '*' + i + '=' + n*i);
+}
+
+
+//forof loop
+        // --------syntax-----------
+// for (const element of myObject) {          
+//     console.log(element);
+// }
+
+const map = new Map()       
+map.set("IN" , "India")
+map.set("FR" , "France")
+map.set("IN" , "India")     //map only gives unique value
+// console.log(map);
+
+for (const [key, value] of map) {          
+    // console.log(key, ":-" , value);
+}
+
+
+//     *object is not iterable*     for-in loop works
+const myObject = {     
+js : "javascript",
+cpp : "C++",
+html : "hyper text markup language"
+}
+for (const key in myObject) {
+    // console.log(myObject[key])
+}
+
+//     --------------------foreach loop--------------------
+const myCoding = [
+    {
+        languageName: "javascript",
+        languageFile: "js"
+    },
+    {
+        languageName: "python",
+        languageFile: "py"
+    },
+    {
+        languageName: "C++",
+        languageFile: "cpp"
+    },
+]
+myCoding.forEach((items) => {
+    // console.log(items.languageFile);
+})
+
+//     --------------------filter--------------------
+const myNums = [1,2,3,4,5,6,7,8,9,10]
+// const newNums = myNums.filter((items)=> items > 4)
+// const newNums = myNums.filter((items)=> {
+    // items > 4
+// })          //scope restrictions will give empty arrays instead use "return"
+
+const newNums = myNums          //many maps in one arrays
+            .map((num) => num*10)
+            .map((num) => num+1)            
+            .filter((num) => num>=40)
+console.log(newNums);
+
+
+
